@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-
+    <script src="script.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDa_lRpFt8dgK74a7x2RrjcDwiOOXMOsnE&callback=initMap"
+    async defer></script>
   <head>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -19,11 +21,18 @@ background-repeat: no-repeat;
     background-size: 2000px 1000px;
    }
     </style>
+      <style>
+      #map {
+        height: 500px;
+      }
+</style>
+     
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   </head>
 
   <body >
+      
     <div class="container">
       <div class="row">
         <div class="col-xs-6">
@@ -38,6 +47,22 @@ background-repeat: no-repeat;
                 <p class="list-group-item-text"></p>
                 <p class="venue"></p>
                 <p class="temp"></p>
+                  <p class="m" id="map"><script>
+                      
+                         var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 40.797, lng: -73.9644},
+          zoom: 13
+        });
+		
+		var trafficLayer = new google.maps.TrafficLayer();
+		
+		
+		
+			trafficLayer.setMap(map);
+      }
+                      </script></p>
                 <p class="list-group-item"><a href="https://m.uber.com/"><img src="ubi.png" height="30" width="30"></a></p>
               </a>
               <a href="#" class="list-group-item">
@@ -87,10 +112,11 @@ background-repeat: no-repeat;
       </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="script.js"></script>
+    
   </body>
 
 </html>
